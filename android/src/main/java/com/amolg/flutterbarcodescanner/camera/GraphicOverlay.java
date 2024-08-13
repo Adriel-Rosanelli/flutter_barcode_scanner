@@ -71,7 +71,7 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
 
         public float translateX(float x) {
             if (mOverlay.mFacing == CameraSource.CAMERA_FACING_FRONT) {
-                return mOverlay.getWidth() - scaleX(x);
+                return mOverlay.getWidth();
             } else {
                 return scaleX(x);
             }
