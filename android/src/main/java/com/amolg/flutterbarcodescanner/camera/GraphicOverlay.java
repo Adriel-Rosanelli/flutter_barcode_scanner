@@ -117,8 +117,8 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        left = (w - AppUtil.dpToPx(getContext(), rectWidth)) / 2;
-        top = (h - AppUtil.dpToPx(getContext(), rectHeight)) / 2;
+        left = (w - AppUtil.dpToPx(getContext(), rectWidth));
+        top = (h - AppUtil.dpToPx(getContext(), rectHeight));
         endY = top;
         super.onSizeChanged(w, h, oldw, oldh);
     }
