@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 
 /// Scan mode which is either QR code or BARCODE
 enum ScanMode { QR, BARCODE, DEFAULT }
-
+/// Eu altero esse arquivo
 /// Provides access to the barcode scanner.
 ///
 /// This class is an interface between the native Android and iOS classes and a
