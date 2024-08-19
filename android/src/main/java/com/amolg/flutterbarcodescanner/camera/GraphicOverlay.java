@@ -89,9 +89,10 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
     public GraphicOverlay(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        rectWidth = AppConstants.BARCODE_RECT_WIDTH;
+        rectWidth = BarcodeCaptureActivity.SCAN_MODE == BarcodeCaptureActivity.SCAN_MODE_ENUM.QR.ordinal()
+                ? 350 : (int) (1200);
         rectHeight = BarcodeCaptureActivity.SCAN_MODE == BarcodeCaptureActivity.SCAN_MODE_ENUM.QR.ordinal()
-                ? AppConstants.BARCODE_RECT_HEIGHT : (int) (AppConstants.BARCODE_RECT_HEIGHT / 1.5);
+                ? 350 : (int) (400);
 
         lineColor = Color.parseColor(FlutterBarcodeScannerPlugin.lineColor);
 
@@ -117,8 +118,8 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        left = (w - AppUtil.dpToPx(getContext(), rectWidth));
-        top = (h - AppUtil.dpToPx(getContext(), rectHeight));
+        left = (w - AppUtil.dpToPx(getContext(), rectWidth)) /2;
+        top = (h - AppUtil.dpToPx(getContext(), rectHeight)) /2;
         endY = top;
         super.onSizeChanged(w, h, oldw, oldh);
     }
